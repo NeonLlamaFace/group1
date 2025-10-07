@@ -15,6 +15,7 @@ jobs:
           distribution: 'adopt'
       - name: Compile with Maven
         run: mvn compile
+        working-directory: ${{ github.workspace }}
       - name: Build Docker Image
         run: docker build -t devopsimage .
       - name: Run image
