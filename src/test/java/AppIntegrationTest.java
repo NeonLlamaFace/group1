@@ -16,11 +16,34 @@ public class AppIntegrationTest
     static void init()
     {
         app = new App();
-        app.connect("127.0.0.1:33060", 5000);
+        app.connect();
+    }
+
+    @Test
+    void connectTest()
+    {
+        app.connect();
+    }
+
+    @Test
+    void disconnectTest()
+    {
+        app.disconnect();
     }
 
     @Test
     void getCityTest()
+    {
+        City testCity = new City();
+        testCity.id = 1;
+        testCity.name = "London";
+        testCity.countryCode = "GBR";
+        testCity.district = "England";
+        testCity.population = 9000000;
+    }
+
+    @Test
+    void displayCityTest()
     {
         City testCity = new City();
         testCity.id = 1;
