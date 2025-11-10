@@ -1,0 +1,13 @@
+version: '3.7'  # Using 3.7 is fine, ignore the warning about 'version'
+services:
+  app:
+    build: .
+
+  db:
+    build: ./db/world # <-- Correct path to Dockerfile
+    restart: always
+    ports:
+      - "33060:3306"
+    environment:        # <-- Important: Pass credentials to the database container
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: world
