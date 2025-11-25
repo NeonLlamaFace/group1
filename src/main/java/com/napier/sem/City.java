@@ -1,14 +1,52 @@
 package com.napier.sem;
 
-public class City
-{
-    public int id;
+/**
+ * Represents a city from the world database
+ */
+public class City {
 
-    public String name;
+  private long id;
+  private String name;
+  private String countryCode;
+  private String district;
+  private long population;
 
-    public String countryCode;
+  public City(long id, String name, String countryCode, String district, long population) {
+    this.id = id;
+    this.name = name;
+    this.countryCode = countryCode;
+    this.district = district;
+    this.population = population;
+  }
 
-    public String district;
+  public long getId() {
+    return id;
+  }
 
-    public int population;
+  public String getName() {
+    return name;
+  }
+
+  public String getCountryCode() {
+    return countryCode;
+  }
+
+  public String getDistrict() {
+    return district;
+  }
+
+  public long getPopulation() {
+    return population;
+  }
+
+  @Override
+  public String toString() {
+    return "City{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", countryCode='" + countryCode + '\'' +
+            ", district='" + district + '\'' +
+            ", population=" + population +
+            '}';
+  }
 }
